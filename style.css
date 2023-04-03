@@ -21,6 +21,8 @@ body {
   grid-template-columns: repeat(3, 1fr);
   column-gap: 0.5rem;
   row-gap: 0.5rem;
+
+  position: relative;
 }
 
 .table-cell {
@@ -69,11 +71,17 @@ body {
 }
 
 .win-message {
-  font-size: 1.25rem;
+  font-size: 2rem;
   color: rgba(0,0,0, 0.75);
-  display: none;
+  transition: all 0.3s ease;
+  /* display: none; */
+  opacity: 0%;
 }
 .win-message span {
   color: #eee;
   font-weight: 600;
+}
+
+.win-cell {
+  background-color: rgba(255, 255, 255, 0.5);
 }
