@@ -1,7 +1,8 @@
 // Import stylesheets
-// import './style.css';
+import './style.css';
 
 // Write Javascript code!
+const TABLE = document.querySelector('.table');
 const TABLE_CELLS = document.querySelectorAll('.table-cell');
 const RESTART_BUTTON = document.querySelector('.restart-button');
 const WIN_MESSAGE = document.querySelector('.win-message');
@@ -63,8 +64,9 @@ function checkWin() {
 
     if(gameBoard[A] !== '' && gameBoard[A] === gameBoard[B] && gameBoard[B] === gameBoard[C]) {
       WIN_MESSAGE.innerHTML = `Player <span>${currentPlayer}</span> winned!`;
-      WIN_MESSAGE.style.display = 'inline';
+      WIN_MESSAGE.style.opacity = '100%';
       gameActive = false;
+      winningCells([A, B, C]);
       return;
     }
   }
@@ -73,7 +75,7 @@ function checkWin() {
 function checkDraw() {
   if (gameBoard.every(cell => cell !== '')) {
     WIN_MESSAGE.textContent = 'It is draw!';
-    WIN_MESSAGE.style.display = 'inline';
+    WIN_MESSAGE.style.opacity = '100%';
     gameActive = false;
   }
 }
@@ -82,11 +84,19 @@ function restartClick() {
   currentPlayer = 'X';
   gameBoard = ['', '', '', '', '', '', '', '', ''];
   gameActive = true;
-  WIN_MESSAGE.style.display = 'none';
+  WIN_MESSAGE.style.opacity = '0%';
 
   TABLE_CELLS.forEach(cell => {
     cell.textContent = '';
-  })
+    cell.classList.remove('win-cell');
+  });
+}
+
+function winningCells(cells) {
+  for (let i = 0; i < cells.length; i++) {
+    const CELL = document.querySelector(`[data-cell='${cells[i]}']`);
+    CELL.classList.add('win-cell');
+  }
 }
 
 TABLE_CELLS.forEach(cell => {
