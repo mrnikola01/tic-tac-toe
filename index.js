@@ -1,5 +1,5 @@
 // Import stylesheets
-import './style.css';
+// import './style.css';
 
 // Write Javascript code!
 const TABLE_CELLS = document.querySelectorAll('.table-cell');
