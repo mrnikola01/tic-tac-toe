@@ -96,6 +96,7 @@ function winningCells(cells) {
   for (let i = 0; i < cells.length; i++) {
     const CELL = document.querySelector(`[data-cell='${cells[i]}']`);
     CELL.classList.add('win-cell');
+    CELL.style.color = '#eee';
   }
 }
 
