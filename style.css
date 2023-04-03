@@ -24,11 +24,11 @@ body {
 }
 
 .table-cell {
-  width: 3.6rem;
-  height: 3.6rem;
+  width: 4.8rem;
+  height: 4.8rem;
   background-color: #eee;
   box-shadow: 0 8px 8px rgba(0, 0, 0, 0.3);
-  font-size: 2.4rem;
+  font-size: 3.6rem;
   color: rgba(0, 0, 0, 0.75);
 
   display: flex;
@@ -44,22 +44,22 @@ body {
 }
 
 .title {
-  font-size: 1rem;
+  font-size: 2rem;
   text-transform: uppercase;
   color: rgba(0, 0, 0, 0.75);
 }
 
 .restart-button {
   margin-top: 1.5rem;
-  padding: 0.5rem 1.4rem;
-  font-size: 0.75rem;
+  padding: 0.75rem 1.2rem;
+  font-size: 1.2rem;
   text-transform: uppercase;
   border: none;
   background-color: rgba(0, 0, 0, 0.75);
   color: #eee;
 
   cursor: pointer;
-  transition: all 0.3s;
+  transition: all 0.3s ease;
 }
 
 .restart-button:hover {
